@@ -1,5 +1,5 @@
 //
-//  ButtonTestViewController.swift
+//  ImageRotateViewController.swift
 //  colltest
 //
 //  Created by dongyeongkang on 2022/08/01.
@@ -7,9 +7,7 @@
 
 import UIKit
 
-class ButtonTestViewController: UIViewController {
-    var window: UIWindow?
-    
+class ImageRotateViewController: UIViewController {
     @IBOutlet weak var testImageview: UIImageView!
     
     override func viewDidLoad() {
