@@ -128,11 +128,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath)
-        guard let convertedCell =  cell as? ImageCell else { return cell }
-        let tupleItem = imageList[indexPath.row]
+        guard let convertedCell =  cell as? ImageCell,
+              let tupleItem = imageList[indexPath.row]
+        else { return cell }
         
         DispatchQueue.main.async {
             convertedCell.image.image = tupleItem
+            convertedCell.orientationLabel.text = tupleItem.imageOrientation.description
         }
         
         return convertedCell
